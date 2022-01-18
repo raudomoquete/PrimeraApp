@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tarea } from './models/tarea.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PrimeraApp';
+
+  arrayTareas: Tarea[];
+
+  constructor() {
+    this.arrayTareas = [];
+  }
+
+  onTareaCreada($event: Tarea) {
+    this.arrayTareas.push($event);
+    console.log(this.arrayTareas);
+  }
+  
 }
